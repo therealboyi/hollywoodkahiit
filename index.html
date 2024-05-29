@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Wants to Be a Millionaire!!!</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div id="game">
+        <h1>Who Wants to Be a Millionaire</h1>
+        <p id="current-count">Amount Won: $0</p>
+        <p id="lifeline-count">Lifelines Remaining: 3</p>
+        <div id="question-container">
+            <img id="question-image" src="" alt="Question context image">
+            <p id="question">Question will appear here</p>
+            <div id="options">
+                <!-- Options will be dynamically inserted here from the API -->
+            </div>
+        </div>
+        <button id="lifeline">50/50 Lifeline</button>
+        <button id="reset" class="hidden">Reset Game</button>
+    </div>
+    <script src="./scripts/api.js"></script>
+</body>
+</html>
