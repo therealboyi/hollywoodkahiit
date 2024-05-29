@@ -95,24 +95,26 @@ document.addEventListener('DOMContentLoaded', () => {
     function selectOption(button, selectedOption) {
         resetSelectedOptions();
         button.classList.add('selected');
-        if (selectedOption === correctAnswer) {
-            currentCount += 1000000;
-            currentCountElement.textContent = `Amount Won: $${currentCount.toLocaleString()}`;
-            currentQuestionIndex++;
-            if (currentQuestionIndex < questions.length) {
-                displayQuestion(questions[currentQuestionIndex]);
+        setTimeout(() => {
+            if (selectedOption === correctAnswer) {
+                currentCount += 1000000;
+                currentCountElement.textContent = `Amount Won: $${currentCount.toLocaleString()}`;
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    displayQuestion(questions[currentQuestionIndex]);
+                } else {
+                    backgroundMusic.pause();
+                    winMusic.play();
+                    alert('Congratulations! You are now a Millionaire!!! $' + currentCount.toLocaleString());
+                    showFinalScore();
+                }
             } else {
                 backgroundMusic.pause();
-                winMusic.play();
-                alert('Congratulations! You are now a Millionaire!!! $' + currentCount.toLocaleString());
+                loseMusic.play();
+                alert('Wrong! The correct answer was ' + correctAnswer + '. You walked away with $' + currentCount.toLocaleString());
                 showFinalScore();
             }
-        } else {
-            backgroundMusic.pause();
-            loseMusic.play();
-            alert('Wrong! The correct answer was ' + correctAnswer + '. You walked away with $' + currentCount.toLocaleString());
-            showFinalScore();
-        }
+        }, 500); // delay to give feedback before resetting
     }
 
     function resetSelectedOptions() {
