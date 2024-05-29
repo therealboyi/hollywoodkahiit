@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentCountElement = document.getElementById('current-count');
     const lifelineCountElement = document.getElementById('lifeline-count');
 
+    const backgroundMusic = document.getElementById('background-music');
+    const winMusic = document.getElementById('win-music');
+    const loseMusic = document.getElementById('lose-music');
+
     let questions = [];
     let currentQuestionIndex = 0;
     let correctAnswer;
@@ -24,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const token = tokenData.token;
             apiUrl += `&token=${token}`;
             await fetchQuestions();
+            backgroundMusic.play();
         } catch (error) {
             console.error('Error fetching token:', error);
         }
@@ -77,10 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentQuestionIndex < questions.length) {
                 displayQuestion(questions[currentQuestionIndex]);
             } else {
+                backgroundMusic.pause();
+                winMusic.play();
                 alert('Congratulations! You are now a Millionaire!!! $' + currentCount.toLocaleString());
                 showFinalScore();
             }
         } else {
+            backgroundMusic.pause();
+            loseMusic.play();
             alert('Wrong! The correct answer was ' + correctAnswer + '. You walked away with $' + currentCount.toLocaleString());
             showFinalScore();
         }
@@ -102,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         questionContainer.classList.remove('hidden');
         lifelineButton.classList.remove('hidden');
         resetButton.classList.add('hidden');
+        winMusic.pause();
+        loseMusic.pause();
         initializeGame();
     }
 
