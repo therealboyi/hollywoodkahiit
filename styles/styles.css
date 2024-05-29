@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 20px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 #game {
@@ -24,9 +25,15 @@ body {
   font-size: 1.2em;
   margin-bottom: 20px;
 }
-#game #current-count, #game #lifeline-count {
+#game #current-count {
   font-size: 1.2em;
   margin-bottom: 10px;
+  color: green;
+}
+#game #lifeline-count {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: red;
 }
 #game .option {
   display: block;

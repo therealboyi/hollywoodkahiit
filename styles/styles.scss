@@ -22,14 +22,13 @@ body {
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
+    overflow: hidden; // Prevent scrolling
 }
 
 // Game Container
 #game {
-    // background: $game-bg-color;
     padding: 20px;
     border-radius: 8px;
-    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
     width: 100%;
     max-width: $max-width;
@@ -41,9 +40,16 @@ body {
         margin-bottom: 20px;
     }
 
-    #current-count, #lifeline-count {
+    #current-count {
         font-size: 1.2em;
         margin-bottom: 10px;
+        color: green; // Set amount won to green
+    }
+
+    #lifeline-count {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: red; // Set lifelines left to red
     }
 
     .option {
