@@ -87,7 +87,7 @@ body {
 }
 #game #question-image {
   display: block;
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   margin: 0 auto 20px auto;
   border-radius: 8px;
@@ -165,4 +165,4 @@ body {
   body {
     height: 95vh;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
