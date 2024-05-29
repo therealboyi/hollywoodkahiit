@@ -2,10 +2,11 @@
 $background-color: #1d1f21;
 $text-color: #ffffff;
 $game-bg-color: #2c3e50;
-$button-bg-color: #c53ce7;
+$button-bg-color: #e74c3c;
 $button-hover-color: #c0392b;
 $option-bg-color: #34495e;
 $option-hover-color: #1abc9c;
+$option-selected-color: #3498db;
 $font-stack: Arial, sans-serif;
 $max-width: 600px;
 
@@ -65,6 +66,10 @@ body {
 
         &:hover {
             background: $option-hover-color;
+        }
+
+        &.selected {
+            background: $option-selected-color;
         }
     }
 

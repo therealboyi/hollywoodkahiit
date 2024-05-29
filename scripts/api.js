@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const button = document.createElement('button');
             button.textContent = option;
             button.classList.add('option');
-            button.addEventListener('click', () => selectOption(option));
+            button.addEventListener('click', () => selectOption(button, option));
             optionsContainer.appendChild(button);
         });
 
@@ -92,7 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function selectOption(selectedOption) {
+    function selectOption(button, selectedOption) {
+        resetSelectedOptions();
+        button.classList.add('selected');
         if (selectedOption === correctAnswer) {
             currentCount += 1000000;
             currentCountElement.textContent = `Amount Won: $${currentCount.toLocaleString()}`;
@@ -111,6 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Wrong! The correct answer was ' + correctAnswer + '. You walked away with $' + currentCount.toLocaleString());
             showFinalScore();
         }
+    }
+
+    function resetSelectedOptions() {
+        const options = document.querySelectorAll('.option');
+        options.forEach(option => option.classList.remove('selected'));
     }
 
     function showFinalScore() {
