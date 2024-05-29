@@ -42,15 +42,16 @@ body {
 
     #current-count {
         font-size: 1.2em;
-        margin-bottom: 0px; /* Reduced space */
-        color: #01e701; /* Set amount won to green */
+        margin-bottom: 0; /* Remove bottom margin */
+        color: rgb(0, 255, 0); /* Set amount won to green */
     }
-
+    
     #lifeline-count {
         font-size: 1.2em;
-        margin-top: 0px; /* Ensure there's no extra space added here */
+        margin-top: 0; /* Remove top margin */
         color: rgb(255, 0, 0); /* Set lifelines left to red */
     }
+    
 
     .option {
         display: block;
