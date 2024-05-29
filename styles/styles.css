@@ -5,7 +5,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 85vh;
   margin: 0;
   padding: 20px;
   box-sizing: border-box;
@@ -27,12 +27,12 @@ body {
 }
 #game #current-count {
   font-size: 1.2em;
-  margin-bottom: 3px; /* Reduced space */
+  margin-bottom: 0px; /* Reduced space */
   color: #01e701; /* Set amount won to green */
 }
 #game #lifeline-count {
   font-size: 1.2em;
-  margin-top: 3px; /* Ensure there's no extra space added here */
+  margin-top: 0px; /* Ensure there's no extra space added here */
   color: rgb(255, 0, 0); /* Set lifelines left to red */
 }
 #game .option {
