@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tokenUrl = 'https://opentdb.com/api_token.php?command=request';
-    let apiUrl = 'https://opentdb.com/api.php?amount=10&type=multiple';
+    let apiUrl = 'https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple';
     const gameContainer = document.getElementById('game');
     const startGameButton = document.getElementById('start-game');
     const questionContainer = document.getElementById('question-container');

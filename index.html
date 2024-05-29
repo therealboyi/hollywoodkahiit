@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who Wants to Be a Millionaire!!!</title>
+    <title>Hollywood Kahiit</title>
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
+
 <body>
     <div id="game">
-        <button id="start-game">Start Game</button>
-        <p id="current-count" class="hidden">Amount Won: $0</p>
-        <p id="lifeline-count" class="hidden">Lifelines Remaining: 3</p>
-        <div id="question-container" class="hidden">
-            <img id="question-image" src="https://upload.wikimedia.org/wikipedia/en/b/bd/Logo_of_Nigerian_Millionaire.jpg" alt="Question context image">
-            <p id="question">Question will appear here</p>
-            <div id="options">
-                <!-- Options will be dynamically inserted here from the API -->
+        <header class="header">
+            <img class="header__avatar" src="./assets/images/avatar.png" alt="user avatar">
+            <h1 class="header__title">Hollywood Kahiit</h1>
+            <p id="current-count" class="hidden">Score: 0</p>
+        </header>
+        <main>
+            <button id="start-game">Start Game</button>
+            <div id="question-container" class="hidden">
+                <img id="question-image"
+                    src="https://www.tripsavvy.com/thmb/y_eb8O1SOh7p1FnCLdCWOWt1sA8=/3865x2576/filters:no_upscale():max_bytes(150000):strip_icc()/hollywood-sign-92352343-5857639c3df78ce2c3c55425.jpg"
+                    alt="Question context image">
+                <p id="question">Question will appear here</p>
+                <div id="options">
+                    <!-- Options will be dynamically inserted here from the API -->
+                </div>
             </div>
-        </div>
-        <button id="lifeline" class="hidden">50/50 Lifeline</button>
-        <button id="reset" class="hidden">Reset Game</button>
+            <div class="lifeline-container">
+                <p id="lifeline-count" class="hidden">Lifelines Remaining: 3</p>
+                <button id="lifeline" class="hidden">50/50 Lifeline</button>
+                <button id="reset" class="hidden">Reset Game</button>
+            </div>
     </div>
     <audio id="background-music" loop>
         <source src="./assets/music/theme.mp3" type="audio/mpeg">
@@ -34,5 +45,7 @@
         Your browser does not support the audio element.
     </audio>
     <script src="./scripts/api.js"></script>
+    </main>
 </body>
+
 </html>

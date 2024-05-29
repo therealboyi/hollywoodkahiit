@@ -1,12 +1,12 @@
 // Variables
-$background-color: #1d1f21;
+$background-color: #6A5AE0;
 $text-color: #ffffff;
-$game-bg-color: #2c3e50;
-$button-bg-color: #e74c3c;
-$button-hover-color: #34495e;
-$option-bg-color: #34495e;
-$option-hover-color: #1abc9c;
-$option-selected-color: #3498db;
+$game-bg-color: #d4a5f54e;
+$button-bg-color: #F4CDFF;
+$button-hover-color: #b8ead7c5;
+$option-bg-color: #6A0DAD;
+$option-hover-color: #6A5AE0;
+$option-selected-color: #B8EAD7;
 $font-stack: Arial, sans-serif;
 $max-width: 600px;
 
@@ -18,11 +18,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85vh;
+    // height: 85vh;
     margin: 0;
-    padding: 70px;
+    padding: 20px;
     box-sizing: border-box;
     overflow: hidden; // Prevent scrolling
+    box-shadow: 20px 20px rgba(0, 0, 0, 0.049) inset;
 }
 
 // Game Container
@@ -31,38 +32,58 @@ body {
     border-radius: 8px;
     text-align: center;
     width: 100%;
-    max-width: $max-width;
+    // max-width: $max-width;
     margin: 0 auto;
     box-sizing: border-box;
+    background-color: $game-bg-color;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.148); 
+
+    .header {
+        justify-content: space-around;
+        display: flex;
+        align-items: center;
+        margin: 1rem .5rem;
+
+        &__avatar {
+            height: 70px;
+            width: 70px;
+        }
+    }
 
     #question {
         font-size: 1.2em;
         margin-bottom: 20px;
     }
+    
+    .lifeline-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1rem;
+    }
 
     #current-count {
         font-size: 1.2em;
-        margin-bottom: 0; 
+        // margin-bottom: 0; 
         color: rgb(0, 255, 0); 
     }
     
     #lifeline-count {
         font-size: 1.2em;
-        margin-top: 0; 
-        color: rgb(255, 0, 0); 
+        margin: 0 1rem; 
+        color: $option-selected-color; 
     }
     
-
     .option {
         display: block;
         width: 100%;
         padding: 10px;
         margin: 5px 0;
-        border: 1px solid $option-bg-color;
+        border: 2px solid $option-bg-color;
         background: $option-bg-color;
         color: $text-color;
         cursor: pointer;
-        border-radius: 4px;
+        border-radius: 6px;
         transition: background 0.3s ease;
 
         &.selected {
@@ -71,17 +92,20 @@ body {
     }
 
     button {
-        margin-top: 20px;
+        // margin-top: 20px;
         padding: 10px 20px;
         cursor: pointer;
         border: none;
-        border-radius: 4px;
-        background: $button-bg-color;
+        border-radius: 20px;
+        background: $background-color;
+        border: 2px solid $option-selected-color;
         color: $text-color;
         font-size: 1em;
         transition: background 0.3s ease;
 
         &:hover {
+            color: #6A0DAD;
+            font-weight: 600;
             background: $button-hover-color;
         }
     }
@@ -92,7 +116,7 @@ body {
 
     #question-image {
         display: block;
-        max-width: 100%;
+        max-width: 50%;
         height: auto;
         margin: 0 auto 20px auto;
         border-radius: 8px;
@@ -104,6 +128,34 @@ body {
 @media (min-width: 769px) {
     .option:hover {
         background: $option-hover-color;
+    }
+
+    #options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .option {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        margin: 5px;
+        border: 1px solid $option-bg-color;
+        background: $option-bg-color;
+        color: $text-color;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+    }
+
+
+    #game {
+        width: 90%;
+    }
+
+    .header {
+        width: 100%;
     }
 }
 
@@ -123,6 +175,18 @@ body {
         .option {
             padding: 8px;
         }
+
+        #lifeline-count {
+            margin: 1rem;  
+        }
+    }
+
+    .lifeline-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1rem;
     }
 }
 
@@ -142,6 +206,10 @@ body {
         .option {
             padding: 6px;
         }
+
+        // .header {
+        //     padding: 1rem;
+        // }
     }
 }
 
