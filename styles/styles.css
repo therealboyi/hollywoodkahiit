@@ -110,3 +110,8 @@ body {
     padding: 6px;
   }
 }
+@media (min-width: 1200px) {
+  body {
+    height: 95vh;
+  }
+}
