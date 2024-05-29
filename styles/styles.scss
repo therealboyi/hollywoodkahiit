@@ -26,21 +26,15 @@ body {
 
 // Game Container
 #game {
-    background: $game-bg-color;
+    // background: $game-bg-color;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
     width: 100%;
     max-width: $max-width;
     margin: 0 auto;
     box-sizing: border-box;
-
-    h1 {
-        color: $button-bg-color;
-        font-size: 2em;
-        margin-bottom: 20px;
-    }
 
     #question {
         font-size: 1.2em;
@@ -109,10 +103,6 @@ body {
     #game {
         padding: 15px;
 
-        h1 {
-            font-size: 1.8em;
-        }
-
         #question {
             font-size: 1.1em;
         }
@@ -131,10 +121,6 @@ body {
 @media (max-width: 480px) {
     #game {
         padding: 10px;
-
-        h1 {
-            font-size: 1.5em;
-        }
 
         #question {
             font-size: 1em;
