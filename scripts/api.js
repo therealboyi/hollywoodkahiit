@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
           currentCountElement.textContent = `Amount Won: $${currentCount.toLocaleString()}`;
           currentQuestionIndex++;
           if (currentQuestionIndex < questions.length) {
-            resetSelectedOptions(); // Ensure all options are reset
+            resetSelectedOptions(); 
             displayQuestion(questions[currentQuestionIndex]);
           } else {
             backgroundMusic.pause();
@@ -115,14 +115,14 @@ document.addEventListener('DOMContentLoaded', () => {
           alert('Wrong! The correct answer was ' + correctAnswer + '. You walked away with $' + currentCount.toLocaleString());
           showFinalScore();
         }
-      }, 500); // delay to give feedback before resetting
+      }, 500); 
     }
   
     function resetSelectedOptions() {
       const options = document.querySelectorAll('.option');
       options.forEach(option => {
         option.classList.remove('selected');
-        option.style.backgroundColor = ''; // Reset background color if any
+        option.style.backgroundColor = ''; 
       });
     }
   
