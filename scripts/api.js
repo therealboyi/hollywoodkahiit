@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentQuestionIndex < questions.length) {
                 displayQuestion(questions[currentQuestionIndex]);
             } else {
-                alert('Congratulations! You have completed the quiz and won $' + currentCount.toLocaleString());
+                alert('Congratulations! You are now a Millionaire!!! $' + currentCount.toLocaleString());
                 showFinalScore();
             }
         } else {
-            alert('Wrong! The correct answer was ' + correctAnswer + '. You won $' + currentCount.toLocaleString());
+            alert('Wrong! The correct answer was ' + correctAnswer + '. You walked away with $' + currentCount.toLocaleString());
             showFinalScore();
         }
     }
