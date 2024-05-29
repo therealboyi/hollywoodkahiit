@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const backgroundMusic = document.getElementById('background-music');
     const winMusic = document.getElementById('win-music');
     const loseMusic = document.getElementById('lose-music');
+
+    // Set volume to 25%
+    backgroundMusic.volume = 0.25;
+    winMusic.volume = 0.25;
+    loseMusic.volume = 0.25;
   
     let questions = [];
     let currentQuestionIndex = 0;
@@ -144,6 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
       resetButton.classList.add('hidden');
       winMusic.pause();
       loseMusic.pause();
+      backgroundMusic.currentTime = 0; // Reset the music to the beginning
       backgroundMusic.play();
       initializeGame();
     }
@@ -174,5 +180,4 @@ document.addEventListener('DOMContentLoaded', () => {
     startGameButton.addEventListener('click', startGame);
     lifelineButton.addEventListener('click', useLifeline);
     resetButton.addEventListener('click', resetGame);
-  });
-  
+});
