@@ -161,6 +161,16 @@ document.addEventListener('DOMContentLoaded', () => {
         lifelineCountElement.textContent = `Lifelines Remaining: ${lifelinesRemaining}`;
     }
 
+    function handleVisibilityChange() {
+        if (document.hidden) {
+            backgroundMusic.pause();
+        } else {
+            backgroundMusic.play();
+        }
+    }
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
     startGameButton.addEventListener('click', startGame);
     lifelineButton.addEventListener('click', useLifeline);
     resetButton.addEventListener('click', resetGame);
