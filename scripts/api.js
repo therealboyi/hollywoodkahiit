@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentCountElement.textContent = `Amount Won: $${currentCount.toLocaleString()}`;
                 currentQuestionIndex++;
                 if (currentQuestionIndex < questions.length) {
+                    resetSelectedOptions(); // Ensure all options are reset
                     displayQuestion(questions[currentQuestionIndex]);
                 } else {
                     backgroundMusic.pause();
@@ -119,7 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetSelectedOptions() {
         const options = document.querySelectorAll('.option');
-        options.forEach(option => option.classList.remove('selected'));
+        options.forEach(option => {
+            option.classList.remove('selected');
+            option.style.backgroundColor = ''; // Reset background color if any
+        });
     }
 
     function showFinalScore() {

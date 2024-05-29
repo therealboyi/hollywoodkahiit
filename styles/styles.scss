@@ -64,10 +64,6 @@ body {
         border-radius: 4px;
         transition: background 0.3s ease;
 
-        &:hover {
-            background: $option-hover-color;
-        }
-
         &.selected {
             background: $option-selected-color;
         }
@@ -103,47 +99,54 @@ body {
 }
 
 // Media Queries
-@media (max-width: 768px) {
-#game {
-    padding: 15px;
-
-    h1 {
-        font-size: 1.8em;
-    }
-
-    #question {
-        font-size: 1.1em;
-    }
-
-    button {
-        padding: 8px 16px;
-        font-size: 0.9em;
-    }
-
-    .option {
-        padding: 8px;
+@media (min-width: 769px) {
+    .option:hover {
+        background: $option-hover-color;
     }
 }
+
+@media (max-width: 768px) {
+    #game {
+        padding: 15px;
+
+        h1 {
+            font-size: 1.8em;
+        }
+
+        #question {
+            font-size: 1.1em;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        .option {
+            padding: 8px;
+        }
+    }
 }
 
 @media (max-width: 480px) {
-#game {
-padding: 10px;
-    h1 {
-        font-size: 1.5em;
-    }
+    #game {
+        padding: 10px;
 
-    #question {
-        font-size: 1em;
-    }
+        h1 {
+            font-size: 1.5em;
+        }
 
-    button {
-        padding: 6px 12px;
-        font-size: 0.8em;
-    }
+        #question {
+            font-size: 1em;
+        }
 
-    .option {
-        padding: 6px;
+        button {
+            padding: 6px 12px;
+            font-size: 0.8em;
+        }
+
+        .option {
+            padding: 6px;
+        }
     }
-}
 }

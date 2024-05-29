@@ -47,9 +47,6 @@ body {
   border-radius: 4px;
   transition: background 0.3s ease;
 }
-#game .option:hover {
-  background: #1abc9c;
-}
 #game .option.selected {
   background: #3498db;
 }
@@ -78,6 +75,11 @@ body {
   border-radius: 8px;
 }
 
+@media (min-width: 769px) {
+  .option:hover {
+    background: #1abc9c;
+  }
+}
 @media (max-width: 768px) {
   #game {
     padding: 15px;
