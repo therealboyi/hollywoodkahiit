@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayQuestion(questionData) {
         questionElement.innerHTML = decodeHTMLEntities(questionData.question);
         optionsContainer.innerHTML = '';
-        questionImage.style.display = 'none';
 
         correctAnswer = decodeHTMLEntities(questionData.correct_answer);
         const options = [...questionData.incorrect_answers.map(decodeHTMLEntities), correctAnswer];
@@ -63,8 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         lifelineUsed = false;
-
-        fetchImageForQuestion(questionData.question);
     }
 
     function decodeHTMLEntities(text) {
@@ -133,22 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
         lifelineUsed = true;
         lifelinesRemaining--;
         lifelineCountElement.textContent = `Lifelines Remaining: ${lifelinesRemaining}`;
-    }
-
-    async function fetchImageForQuestion(questionText) {
-        const response = await fetch('https://api.example.com/getImageForQuestion', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ question: questionText })
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            questionImage.src = data.imageUrl;
-            questionImage.style.display = 'block';
-        } else {
-            console.error('Error fetching image for question');
-        }
     }
 
     lifelineButton.addEventListener('click', useLifeline);
