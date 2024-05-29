@@ -46,12 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayQuestion(questionData) {
-        questionElement.innerHTML = questionData.question;
+        questionElement.innerHTML = decodeHTMLEntities(questionData.question);
         optionsContainer.innerHTML = '';
         questionImage.style.display = 'none';
 
-        correctAnswer = questionData.correct_answer;
-        const options = [...questionData.incorrect_answers, questionData.correct_answer];
+        correctAnswer = decodeHTMLEntities(questionData.correct_answer);
+        const options = [...questionData.incorrect_answers.map(decodeHTMLEntities), correctAnswer];
         shuffleArray(options);
 
         options.forEach(option => {
@@ -65,6 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
         lifelineUsed = false;
 
         fetchImageForQuestion(questionData.question);
+    }
+
+    function decodeHTMLEntities(text) {
+        const textArea = document.createElement('textarea');
+        textArea.innerHTML = text;
+        return textArea.value;
     }
 
     function shuffleArray(array) {
