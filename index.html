@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who Wants to Be a Millionaire!!!</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
     <div id="game">
-        <h1>Who Wants to Be a Millionaire</h1>
-        <p id="current-count">Amount Won: $0</p>
-        <p id="lifeline-count">Lifelines Remaining: 3</p>
-        <div id="question-container">
+        <h1>Who Wants to Be a Millionaire!!!</h1>
+        <button id="start-game">Start Game</button>
+        <p id="current-count" class="hidden">Amount Won: $0</p>
+        <p id="lifeline-count" class="hidden">Lifelines Remaining: 3</p>
+        <div id="question-container" class="hidden">
             <img id="question-image" src="https://upload.wikimedia.org/wikipedia/en/b/bd/Logo_of_Nigerian_Millionaire.jpg" alt="Question context image">
             <p id="question">Question will appear here</p>
             <div id="options">
                 <!-- Options will be dynamically inserted here from the API -->
             </div>
         </div>
-        <button id="lifeline">50/50 Lifeline</button>
+        <button id="lifeline" class="hidden">50/50 Lifeline</button>
         <button id="reset" class="hidden">Reset Game</button>
     </div>
     <audio id="background-music" loop>

@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tokenUrl = 'https://opentdb.com/api_token.php?command=request';
     let apiUrl = 'https://opentdb.com/api.php?amount=10&type=multiple';
+    const gameContainer = document.getElementById('game');
+    const startGameButton = document.getElementById('start-game');
     const questionContainer = document.getElementById('question-container');
     const questionImage = document.getElementById('question-image');
     const questionElement = document.getElementById('question');
@@ -21,6 +23,20 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentCount = 0;
     let lifelinesRemaining = 3;
 
+    async function startGame() {
+        try {
+            startGameButton.classList.add('hidden');
+            currentCountElement.classList.remove('hidden');
+            lifelineCountElement.classList.remove('hidden');
+            questionContainer.classList.remove('hidden');
+            lifelineButton.classList.remove('hidden');
+            backgroundMusic.play();
+            await initializeGame();
+        } catch (error) {
+            console.error('Error starting game:', error);
+        }
+    }
+
     async function initializeGame() {
         try {
             const tokenResponse = await fetch(tokenUrl);
@@ -28,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const token = tokenData.token;
             apiUrl += `&token=${token}`;
             await fetchQuestions();
-            backgroundMusic.play();
         } catch (error) {
             console.error('Error fetching token:', error);
         }
@@ -116,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resetButton.classList.add('hidden');
         winMusic.pause();
         loseMusic.pause();
+        backgroundMusic.play();
         initializeGame();
     }
 
@@ -132,8 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lifelineCountElement.textContent = `Lifelines Remaining: ${lifelinesRemaining}`;
     }
 
+    startGameButton.addEventListener('click', startGame);
     lifelineButton.addEventListener('click', useLifeline);
     resetButton.addEventListener('click', resetGame);
-
-    initializeGame();
 });

@@ -1,0 +1,145 @@
+// Variables
+$background-color: #1d1f21;
+$text-color: #ffffff;
+$game-bg-color: #2c3e50;
+$button-bg-color: #c53ce7;
+$button-hover-color: #c0392b;
+$option-bg-color: #34495e;
+$option-hover-color: #1abc9c;
+$font-stack: Arial, sans-serif;
+$max-width: 600px;
+
+// Global Styles
+body {
+    font-family: $font-stack;
+    background-color: $background-color;
+    color: $text-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+// Game Container
+#game {
+    background: $game-bg-color;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    h1 {
+        color: $button-bg-color;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    #question {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    #current-count, #lifeline-count {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .option {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid $option-bg-color;
+        background: $option-bg-color;
+        color: $text-color;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: $option-hover-color;
+        }
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background: $button-bg-color;
+        color: $text-color;
+        font-size: 1em;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: $button-hover-color;
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #question-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto 20px auto;
+        border-radius: 8px;
+    }
+}
+
+// Media Queries
+@media (max-width: 768px) {
+    #game {
+        padding: 15px;
+
+        h1 {
+            font-size: 1.8em;
+        }
+
+        #question {
+            font-size: 1.1em;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        .option {
+            padding: 8px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    #game {
+        padding: 10px;
+
+        h1 {
+            font-size: 1.5em;
+        }
+
+        #question {
+            font-size: 1em;
+        }
+
+        button {
+            padding: 6px 12px;
+            font-size: 0.8em;
+        }
+
+        .option {
+            padding: 6px;
+        }
+    }
+}
