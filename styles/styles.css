@@ -62,7 +62,7 @@ body {
   transition: background 0.3s ease;
 }
 #game button:hover {
-  background: #c0392b;
+  background: #34495e;
 }
 #game .hidden {
   display: none;
